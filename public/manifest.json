@@ -16,8 +16,10 @@
 
   "content_scripts": [
       {
+          "run_at": "document_end",
           "matches": ["<all_urls>"],
-          "js": ["js/vendor.js", "js/content_script.js"]
+          "js": ["jquery.min.js" ,"js/vendor.js", "js/content_script.js"],
+          "css": ["app.css"]
       }
   ],
 
@@ -25,9 +27,8 @@
     "service_worker": "js/background.js"
   },
 
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["commands", "storage", "unlimitedStorage"],
+
 
   "host_permissions": [
     "<all_urls>"
