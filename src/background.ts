@@ -10,7 +10,7 @@ const checkAuth = async () => {
 checkAuth();
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  if (request.contentScriptQuery == "fetchUrl") {
+  if (request.contentScriptQuery == "fetchGPTUrl") {
     // WARNING: SECURITY PROBLEM - a malicious web page may abuse
     // the message handler to get access to arbitrary cross-origin
     // resources.
